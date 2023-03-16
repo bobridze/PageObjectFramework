@@ -14,23 +14,23 @@ namespace SpecFlowFramework.PageObjects
             _driver = driver;
         }
         //Products
-        private string popUpTitle => _driver.FindElement(By.XPath("/html/body/div[5]/div/div[1]/div/div[1]/div/div/div")).Text;
-        private IWebElement loginButton => _driver.FindElement(By.XPath("//div[contains(text(),'Log in')]"));
-        private IWebElement registerButton => _driver.FindElement(By.XPath("//div[contains(text(),'Register')]"));
+        private string PopUpTitle => _driver.FindElement(By.XPath("/html/body/div[5]/div/div[1]/div/div[1]/div/div/div")).Text;
+        private IWebElement LoginButton => _driver.FindElement(By.XPath("//div[contains(text(),'Log in')]"));
+        private IWebElement RegisterButton => _driver.FindElement(By.XPath("//div[contains(text(),'Register')]"));
 
         public string GetPopUpTitle()
         {
-            return popUpTitle;
+            return PopUpTitle;
         }
 
         public void ClickLogInButton()
         {
-            loginButton.Click();
+            LoginButton.Click();
         }
 
         public void ClickRegisterButton()
         {
-            registerButton.Click();
+            RegisterButton.Click();
         }
     }
 }

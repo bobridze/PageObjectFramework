@@ -29,7 +29,7 @@ namespace SpecFlowFramework.PageObjects
             return _driver.Url;
         }
 
-        public BasePage scrollUp()
+        public BasePage ScrollUp()
         {
             IWebElement s = _driver.FindElement(By.Id("your_locator")); ;
             IJavaScriptExecutor je = (IJavaScriptExecutor)_driver;

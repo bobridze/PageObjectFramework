@@ -11,9 +11,9 @@ namespace SpecFlowFramework.PageObjects
     public class SideBar : BasePage
     {
         #region Selectors
-        private IWebElement viewAllButton => _driver.FindElement(By.ClassName("view-all"));
-        private IWebElement securityButton => _driver.FindElement(By.XPath("//*[@id='sidebarSection']/div/app-product-catalog-sidebar/div/ul/app-pcs-item[26]/li/span[1]"));
-        private IWebElement header => _driver.FindElement(By.XPath("//div[@class='header']"));
+        private IWebElement ViewAllButton => _driver.FindElement(By.ClassName("view-all"));
+        private IWebElement SecurityButton => _driver.FindElement(By.XPath("//*[@id='sidebarSection']/div/app-product-catalog-sidebar/div/ul/app-pcs-item[26]/li/span[1]"));
+        private IWebElement Header => _driver.FindElement(By.XPath("//div[@class='header']"));
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace SpecFlowFramework.PageObjects
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
         }
 
-        public string GetHeaderText => header.Text;
+        public string GetHeaderText => Header.Text;
 
         //public void SelectCategory(string category)
         //{
@@ -40,33 +40,26 @@ namespace SpecFlowFramework.PageObjects
 
         public void ViewAllCategories()
         {
-            if (!viewAllButton.Enabled)
+            if (!ViewAllButton.Enabled)
             {
                 return;
             }
-            viewAllButton.Click();
+            ViewAllButton.Click();
         }
 
         public void SecurityButtonClick()
         {
-            if (!securityButton.Enabled)
+            if (!SecurityButton.Enabled)
             {
                 return;
             }
-            securityButton.Click();
+            SecurityButton.Click();
         }
 
-        public String[] GetCategoriesFromSideBar(IWebDriver driver)
-        {
-            IList<IWebElement> all = driver.FindElements(By.XPath("//*[@id='sidebarSection']/div/app-product-catalog-sidebar/div/ul/li"));
-
-            String[] allText = new String[all.Count];
-            int i = 0;
-            foreach (IWebElement element in all)
-            {
-                allText[i++] = element.Text;
-            }
-            return allText;
-        }
+        //public int GetCategoriesFromSideBar()
+        //{
+            
+        //    return allText;
+        //}
     }
 }

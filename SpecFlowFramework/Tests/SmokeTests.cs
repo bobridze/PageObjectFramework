@@ -8,7 +8,7 @@ using SpecFlowFramework.PageObjects;
 
 namespace SpecFlowFramework.Tests
 {
-    class SmokeTests : BaseTest
+    public class SmokeTests : BaseTest
     {
         //InitPage init = new InitPage(driver);
     }

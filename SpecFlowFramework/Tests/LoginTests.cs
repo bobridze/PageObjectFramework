@@ -30,9 +30,9 @@ namespace SpecFlowFramework.Tests
             Thread.Sleep(5000);
             //securityPage.ViewOffersAzureInformProtection();
 
-            AzureInformationProtectionPage aipPage = new AzureInformationProtectionPage(driver);
-        
-            aipPage.PremiumP1NonprofitBuyNowClick();
+            ProductsPage productsPage = new ProductsPage(driver);
+
+            productsPage.PremiumP1NonprofitBuyNowClick();
             Thread.Sleep(5000);
             //Assert.AreEqual(20, sidebar.GetCategoriesFromSideBar(driver).Length);
 

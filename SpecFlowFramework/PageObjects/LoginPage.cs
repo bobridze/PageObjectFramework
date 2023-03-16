@@ -13,8 +13,8 @@ namespace SpecFlowFramework.PageObjects
         {
             _driver = driver;
         }
-        private IWebElement loginHeader => _driver.FindElement(By.XPath("//div/span[contains(text(),'Log in')]"));
+        private IWebElement LoginHeader => _driver.FindElement(By.XPath("//div/span[contains(text(),'Log in')]"));
 
-        public string GetHeaderText => loginHeader.Text;
+        public string GetHeaderText => LoginHeader.Text;
     }
 }

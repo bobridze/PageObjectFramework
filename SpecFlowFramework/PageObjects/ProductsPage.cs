@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SpecFlowFramework.PageObjects
 {
-    public class AzureInformationProtectionPage : BasePage
+    public class ProductsPage : BasePage
     {
-        public AzureInformationProtectionPage(IWebDriver driver) : base(driver)
+        public ProductsPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
         }
