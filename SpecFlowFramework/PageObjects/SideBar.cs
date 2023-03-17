@@ -11,6 +11,7 @@ namespace SpecFlowFramework.PageObjects
     public class SideBar : BasePage
     {
         #region Selectors
+        private IWebElement categoriesCatalog => _driver.FindElement(By.XPath("//div/ul"));
         private IWebElement ViewAllButton => _driver.FindElement(By.ClassName("view-all"));
         private IWebElement SecurityButton => _driver.FindElement(By.XPath("//*[@id='sidebarSection']/div/app-product-catalog-sidebar/div/ul/app-pcs-item[26]/li/span[1]"));
         private IWebElement Header => _driver.FindElement(By.XPath("//div[@class='header']"));
@@ -58,8 +59,31 @@ namespace SpecFlowFramework.PageObjects
 
         //public int GetCategoriesFromSideBar()
         //{
-            
+
         //    return allText;
+        //}
+
+        public string GetCategoryName (string p0)
+        {
+            string xPathCatName = String.Format("//div[@class]/ul/app-pcs-item[{0}]/li/span[1]", p0);
+            IWebElement item = _driver.FindElement(By.XPath(xPathCatName));
+            return item.Text;
+        }
+
+        public string GetCategoryCount(string p0)
+        {
+            string xPathCatCount = String.Format("//div[@class]/ul/app-pcs-item[{0}]/li/span[2]", p0);
+            IWebElement item = _driver.FindElement(By.XPath(xPathCatCount));
+            return item.Text;
+        }
+        //private SideBarCategoryModel InitialiseSideBarCategogies(IWebElement sideBarCatalogCatalog)
+        //{
+        //    return new SideBarCategoryModel
+        //    {
+        //        CategoryName = sideBarCatalogCatalog.FindElement(By.XPath("//div/div/div/a")).Text,
+        //        ProductsCount = sideBarCatalogCatalog.FindElement(By.XPath("//div/div/div[2]/p")).Text,
+        //        OpenCategoryButton = sideBarCatalogCatalog.FindElement(By.XPath("//div/div/div[2]/a"))
+        //    };
         //}
     }
 }

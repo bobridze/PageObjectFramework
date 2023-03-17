@@ -16,7 +16,7 @@ namespace SpecFlowFramework.Tests
         public void SetUp()
         {
             driver = new ChromeDriver();
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             driver.Navigate().GoToUrl("https://appxite-rethink-front-p3-test-01.azurewebsites.net/Catalog/OnboardingIntegration");
 
         }
