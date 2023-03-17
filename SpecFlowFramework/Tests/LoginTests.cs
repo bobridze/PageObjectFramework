@@ -24,21 +24,13 @@ namespace SpecFlowFramework.Tests
             sidebar.SecurityButtonClick();
 
             SecurityPage securityPage = new SecurityPage(driver);
-            //Thread.Sleep(5000);
             securityPage.ClickAIPProduct();
-
-            //Thread.Sleep(5000);
-            //securityPage.ViewOffersAzureInformProtection();
-
             ProductsPage productsPage = new ProductsPage(driver);
 
             productsPage.PremiumP1NonprofitBuyNowClick();
-            //Thread.Sleep(5000);
-            //Assert.AreEqual(20, sidebar.GetCategoriesFromSideBar(driver).Length);
 
             AuthorisationMethodPopUp authPopUp = new AuthorisationMethodPopUp(driver);
             authPopUp.ClickLogInButton();
-            //Thread.Sleep(5000);
             LoginPage loginPage = new LoginPage(driver);
             Assert.AreEqual("Log in", loginPage.GetHeaderText);
         }
